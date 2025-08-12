@@ -1,13 +1,10 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
+const app = express();
+app.use(express.json());
 
-app.get("/", (req, res)=>{
-    res.send("Express backend on vercel!")
-})
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Express backend on vercel!" });
+});
 
-app.listen(6000, ()=>{
-    console.log('Backend running on port 6000')
-})
-
-export default app
+export default app;
